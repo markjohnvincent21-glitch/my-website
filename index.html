@@ -2,76 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tradingph</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+  <title>TradingHub</title>
 
-    header {
-      background: #1e293b;
-      padding: 30px;
-      text-align: center;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: white;
+    scroll-behavior: smooth;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+  header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-bottom: 1px solid #1f2937;
+  }
 
-    header p {
-      color: #38bdf8;
-    }
+  h1 {
+    font-size: 60px;
+    margin: 0;
+    color: #38bdf8;
+    letter-spacing: 2px;
+  }
 
-    .container {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
+  header p {
+    color: #cbd5e1;
+    font-size: 20px;
+    margin-top: 10px;
+  }
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-    }
+  .btn {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 24px;
+    background: #38bdf8;
+    color: black;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
 
-    h2 {
-      color: #38bdf8;
-    }
+  .btn:hover {
+    transform: scale(1.08);
+    background: #0ea5e9;
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #38bdf8;
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+  }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: gray;
+  .card {
+    background: rgba(17, 24, 39, 0.9);
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+    transition: 0.3s;
+
+    /* ✨ ANIMATION */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  /* stagger effect */
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.4s; }
+  .card:nth-child(3) { animation-delay: 0.6s; }
+  .card:nth-child(4) { animation-delay: 0.8s; }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-  </style>
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+  }
+
+  h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    line-height: 2;
+    color: #cbd5e1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: gray;
+    border-top: 1px solid #1f2937;
+    margin-top: 40px;
+  }
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Mark Vincent Mina</h1>
-  <p>Entrepreneur | Student | Business </p>
+  <h1>TradingHub</h1>
+  <p>Entrepreneur | Student | Building the Future</p>
+  <a class="btn" href="#about">Start Exploring</a>
 </header>
+
+<div style="text-align:center; padding:15px; background:#0f172a; border-bottom:1px solid #1f2937;">
+  <a href="#about" style="margin:10px; color:#38bdf8; text-decoration:none;">About</a>
+  <a href="#vision" style="margin:10px; color:#38bdf8; text-decoration:none;">Vision</a>
+  <a href="#skills" style="margin:10px; color:#38bdf8; text-decoration:none;">Skills</a>
+  <a href="#contact" style="margin:10px; color:#38bdf8; text-decoration:none;">Contact</a>
+</div>
 
 <div class="container">
 
-  <div class="card">
+  <div class="card" id="about">
     <h2>About Me</h2>
     <p>
       Hi, I’m <b>Mark</b>. I’m building my future through business, discipline, and ambition.
@@ -79,36 +135,34 @@
     </p>
   </div>
 
-  <div class="card">
-    <h2>My Business</h2>
+  <div class="card" id="vision">
+    <h2>My Vision</h2>
     <p>
-      I offer quality products/services that aim to give value to customers.
-      More updates coming soon as my business grows.
+      TradingHub is a platform for learning, motivation, and growth.
+      It helps students build skills and mindset for the future.
     </p>
-    <a class="btn" href="#">Contact Me</a>
   </div>
 
-  <div class="card">
+  <div class="card" id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Basic Business Management</li>
+      <li>Business Basics</li>
       <li>Marketing & Sales</li>
       <li>Creative Thinking</li>
-      <li>Learning New Skills Fast</li>
+      <li>Fast Learning</li>
     </ul>
   </div>
 
-  <div class="card">
+  <div class="card" id="contact">
     <h2>Contact</h2>
-    <p>Email: markjohnvincent21@email.com</p>
-    <p>Facebook: Mark Vincent Mina</p>
-    <p>Phone: 09369362408</p>
+    <p>Connect with me through future updates or social links.</p>
+    <a class="btn" href="#">Message Me</a>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Mark John Vincent Mina. All Rights Reserved.
+  © 2026 TradingHub. All Rights Reserved.
 </footer>
 
 </body>
